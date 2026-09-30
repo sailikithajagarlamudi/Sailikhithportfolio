@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Likhitha's Function Hall | Online Booking</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <div class="logo">LH</div>
+    <div>
+      <h1>Likhitha's</h1>
+      <span>Function Hall</span>
+    </div>
+  </div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#food">Food</a>
+    <a href="#facilities">Facilities</a>
+    <a href="#booking">Book Now</a>
+    <a href="#bookings">Bookings</a>
+  </nav>
+</header>
+
+<main>
+<section id="home" class="hero">
+  <div class="hero-content">
+    <p class="eyebrow">CELEBRATE • GATHER • REMEMBER</p>
+    <h2>Beautiful moments deserve a beautiful hall.</h2>
+    <p>Plan weddings, receptions, birthdays, engagements and family events at Likhitha's Function Hall with food, decoration and facilities in one place.</p>
+    <a class="primary-btn" href="#booking">Book Your Event</a>
+  </div>
+</section>
+
+<section class="intro section">
+  <div>
+    <p class="eyebrow">WELCOME TO LIKHITHA'S</p>
+    <h2>A complete venue for your special day</h2>
+  </div>
+  <p>Choose your food preference, hall facilities and decoration, then receive an instant estimated total before confirming your booking.</p>
+</section>
+
+<section id="food" class="section">
+  <div class="section-title">
+    <p class="eyebrow">FOOD MENU</p>
+    <h2>Veg & Non-Veg Delights</h2>
+  </div>
+  <div class="tabs">
+    <button class="tab active" data-type="Veg">Veg</button>
+    <button class="tab" data-type="Non-Veg">Non-Veg</button>
+  </div>
+  <div id="foodGrid" class="card-grid"></div>
+</section>
+
+<section id="facilities" class="section alt">
+  <div class="section-title">
+    <p class="eyebrow">HALL SERVICES</p>
+    <h2>Facilities & Decoration</h2>
+  </div>
+  <div class="two-column">
+    <div>
+      <h3>Facilities</h3>
+      <div id="facilityGrid" class="card-grid small"></div>
+    </div>
+    <div>
+      <h3>Decoration Themes</h3>
+      <div id="decorationGrid" class="card-grid small"></div>
+    </div>
+  </div>
+</section>
+
+<section id="booking" class="section booking-section">
+  <div class="section-title">
+    <p class="eyebrow">ONLINE RESERVATION</p>
+    <h2>Book Likhitha's Function Hall</h2>
+  </div>
+
+  <div class="booking-layout">
+    <form id="bookingForm" class="booking-form">
+      <div class="form-grid">
+        <label>Customer Name
+          <input id="customerName" required placeholder="Enter full name">
+        </label>
+        <label>Phone Number
+          <input id="phone" required pattern="[0-9]{10}" placeholder="10 digit number">
+        </label>
+        <label>Email
+          <input id="email" type="email" placeholder="name@example.com">
+        </label>
+        <label>Event Type
+          <select id="eventType" required>
+            <option value="">Select event</option>
+            <option>Wedding</option>
+            <option>Reception</option>
+            <option>Engagement</option>
+            <option>Birthday</option>
+            <option>Family Function</option>
+            <option>Corporate Event</option>
+          </select>
+        </label>
+        <label>Event Date
+          <input id="eventDate" type="date" required>
+        </label>
+        <label>Number of Guests
+          <input id="guests" type="number" min="1" max="2000" value="100" required>
+        </label>
+      </div>
+
+      <div class="selection-box">
+        <h3>Food Package</h3>
+        <div id="foodChoices" class="choice-list"></div>
+      </div>
+
+      <div class="selection-box">
+        <h3>Hall Facilities</h3>
+        <div id="facilityChoices" class="choice-list"></div>
+      </div>
+
+      <div class="selection-box">
+        <h3>Decoration</h3>
+        <div id="decorationChoices" class="choice-list"></div>
+      </div>
+
+      <button class="primary-btn full" type="submit">Confirm Online Booking</button>
+    </form>
+
+    <aside class="summary-card">
+      <p class="eyebrow">PRICE SUMMARY</p>
+      <h3>Your Event Estimate</h3>
+      <div class="summary-row"><span>Food</span><strong id="foodTotal">₹0</strong></div>
+      <div class="summary-row"><span>Facilities</span><strong id="facilityTotal">₹0</strong></div>
+      <div class="summary-row"><span>Decoration</span><strong id="decorationTotal">₹0</strong></div>
+      <div class="summary-total"><span>Grand Total</span><strong id="grandTotal">₹0</strong></div>
+      <p class="note">Food cost is calculated using the selected package price × number of guests.</p>
+    </aside>
+  </div>
+</section>
+
+<section id="bookings" class="section alt">
+  <div class="section-title">
+    <p class="eyebrow">RESERVATIONS</p>
+    <h2>Booking List</h2>
+  </div>
+  <div id="bookingList" class="booking-list"></div>
+</section>
+</main>
+
+<footer>
+  <div class="brand footer-brand">
+    <div class="logo">LH</div>
+    <div><h1>Likhitha's</h1><span>Function Hall</span></div>
+  </div>
+  <p>© 2026 Likhitha's Function Hall • Online Booking System</p>
+</footer>
+
+<div id="toast" class="toast"></div>
+<script src="js/app.js"></script>
+</body>
+</html>
